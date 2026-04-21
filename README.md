@@ -5,10 +5,10 @@ Aplicacao em Go que consulta um CEP em duas APIs simultaneamente e usa apenas a 
 ## Requisitos atendidos
 
 - Requisicoes paralelas para `BrasilAPI` e `ViaCEP`
-- Vence a primeira resposta valida (race)
-- A requisicao perdedora e cancelada via `context`
+- Vence a primeira resposta válida (race)
+- A requisição perdedora é cancelada via `context`
 - Timeout global de `1s`
-- Saida no terminal com os dados do endereco e nome da API vencedora
+- Saida no terminal com os dados do endereço e nome da API vencedora
 
 ## APIs usadas
 
@@ -21,7 +21,7 @@ Aplicacao em Go que consulta um CEP em duas APIs simultaneamente e usa apenas a 
 go run . 01001000
 ```
 
-Tambem aceita CEP com hifen:
+Também aceita CEP com hifen:
 
 ```powershell
 go run . 01001-000
@@ -42,7 +42,7 @@ DDD: 11
 
 ## Timeout
 
-Se nenhuma API responder em ate 1 segundo, a aplicacao encerra com erro:
+Se nenhuma API responder em até 1s, a aplicação encerra a execução com o erro abaixo:
 
 ```text
 erro: timeout de 1s atingido. Nenhuma API respondeu a tempo
