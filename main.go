@@ -56,7 +56,7 @@ func main() {
 		}
 	}
 
-	fmt.Println("erro: nenhuma API retornou um resultado valido")
+	fmt.Println("erro: nenhuma API retornou um resultado válido")
 	for _, err := range errs {
 		fmt.Printf("- %v\n", err)
 	}
@@ -67,7 +67,7 @@ func fetchBrasilAPI(ctx context.Context, cep string) (entities.Address, error) {
 	url := fmt.Sprintf("https://brasilapi.com.br/api/cep/v1/%s", cep)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
-		return entities.Address{}, fmt.Errorf("BrasilAPI: erro ao criar requisicao: %w", err)
+		return entities.Address{}, fmt.Errorf("BrasilAPI: erro ao criar requisição: %w", err)
 	}
 
 	resp, err := http.DefaultClient.Do(req)
@@ -102,7 +102,7 @@ func fetchViaCEP(ctx context.Context, cep string) (entities.Address, error) {
 	url := fmt.Sprintf("http://viacep.com.br/ws/%s/json/", cep)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
-		return entities.Address{}, fmt.Errorf("ViaCEP: erro ao criar requisicao: %w", err)
+		return entities.Address{}, fmt.Errorf("ViaCEP: erro ao criar requisição: %w", err)
 	}
 
 	resp, err := http.DefaultClient.Do(req)
