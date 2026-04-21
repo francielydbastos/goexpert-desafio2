@@ -19,7 +19,7 @@ func main() {
 
 	cep := sanitizeCEP(os.Args[1])
 	if !isValidCEP(cep) {
-		fmt.Println("erro: CEP invalido. Informe 8 digitos, por exemplo 01001000")
+		fmt.Println("erro: CEP inválido. Informe 8 dígitos, por exemplo 01001000 ou 01001-000")
 		os.Exit(1)
 	}
 
